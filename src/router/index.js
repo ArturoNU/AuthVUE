@@ -45,8 +45,8 @@ const router = new VueRouter({
     routes,
 });
 
-/*router.beforeEach((to, from, next) => {
-    if (to.matched.some((record = record.meta.requiresAuth))) {
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.requiresAuth)) {
         const usuario = auth.currentUser;
         console.log("usuario desde router ", usuario);
         if (!usuario) {
@@ -56,6 +56,6 @@ const router = new VueRouter({
     } else {
         next();
     }
-});*/
+});
 
 export default router;
